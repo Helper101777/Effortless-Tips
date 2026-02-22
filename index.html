@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effortless Tips</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #a7ff83, #17b978);
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #17b978;
+      color: white;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .video-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: popIn 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card h3 {
+      margin: 1rem;
+      font-size: 1.4rem;
+      color: #17b978;
+    }
+
+    .card p {
+      margin: 0 1rem 1rem;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #17b978;
+      color: white;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Effortless Tips</h1>
+    <p>Smart hacks, zero effort ✨</p>
+  </header>
+
+  <section class="video-cards">
+    <div class="card">
+      <img src="thumbnail1.jpg" alt="Video 1">
+      <h3>Quick Kitchen Hack</h3>
+      <p>Save time with this effortless trick.</p>
+    </div>
+    <div class="card">
+      <img src="thumbnail2.jpg" alt="Video 2">
+      <h3>Productivity Boost</h3>
+      <p>Get more done with less stress.</p>
+    </div>
+    <div class="card">
+      <img src="thumbnail3.jpg" alt="Video 3">
+      <h3>Tech Shortcut</h3>
+      <p>Master your device in seconds.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Effortless Tips | Subscribe for more hacks!</p>
+  </footer>
+</body>
+</html>
