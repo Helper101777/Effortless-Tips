@@ -6,9 +6,9 @@
   <title>Effortless Tips</title>
   <style>
     body {
-      font-family: "Comic Sans MS"; /* Only Comic Sans */
+      font-family: "Comic Sans MS"; /* Strict Comic Sans everywhere */
       margin: 0;
-      background: #f5f5f5; /* light gray */
+      background: #f5f5f5;
       color: #333;
     }
 
@@ -16,8 +16,8 @@
       text-align: center;
       padding: 2rem;
       background: #fff;
-      border-bottom: 2px solid #ccc;
-      animation: fadeInDown 1.5s ease;
+      border-bottom: 1px solid #ccc;
+      animation: fadeInDown 0.8s ease;
     }
 
     header h1 {
@@ -57,9 +57,9 @@
       margin: 2rem auto;
       padding: 1.5rem;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      animation: fadeInUp 1.5s ease;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.8s ease;
     }
 
     section h2 {
@@ -67,41 +67,61 @@
       margin-bottom: 1rem;
     }
 
-    .video-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: popIn 1s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-
-    .card img {
+    /* FAQ accordion */
+    .faq button {
       width: 100%;
-      display: block;
-    }
-
-    .card h3 {
-      margin: 1rem;
-      font-size: 1.4rem;
-      color: #17b978;
-    }
-
-    .card p {
-      margin: 0 1rem 1rem;
+      text-align: left;
+      padding: 0.8rem;
       font-size: 1rem;
-      color: #555;
+      font-weight: bold;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+      font-family: "Comic Sans MS";
+    }
+
+    .faq button:hover {
+      background: #ddd;
+    }
+
+    .faq .answer {
+      display: none;
+      padding: 0.8rem;
+      background: #f9f9f9;
+      border-left: 4px solid #17b978;
+      margin-bottom: 1rem;
+      font-family: "Comic Sans MS";
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-left: 4px solid #17b978;
+      font-family: "Comic Sans MS";
+    }
+
+    .links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .links li {
+      margin: 0.5rem 0;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #17b978;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      font-family: "Comic Sans MS";
+    }
+
+    .links a:hover {
+      color: #333;
     }
 
     footer {
@@ -109,29 +129,19 @@
       padding: 1rem;
       background: #eee;
       color: #333;
-      animation: fadeInUp 1.5s ease;
+      animation: fadeInUp 0.8s ease;
+      font-family: "Comic Sans MS";
     }
 
     /* Animations */
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
+      from { opacity: 0; transform: translateY(-15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      section { margin: 1rem; padding: 1rem; }
     }
   </style>
 </head>
@@ -144,12 +154,14 @@
   <nav>
     <a href="#about">About</a>
     <a href="#videos">Videos</a>
-    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#links">Links</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi, I’m Nabil! I created Effortless Tips to share quick hacks that make life smoother, smarter, and more fun. Whether it’s productivity, lifestyle, or tech, my goal is to empower you with simple tricks that save time and energy.</p>
+    <p><b>Hi, I’m Nabil!</b> I created Effortless Tips to share quick hacks that make life smoother, smarter, and more fun. <b>Whether it’s productivity, lifestyle, or tech, my goal is to empower you with simple tricks that save time and energy.</b></p>
   </section>
 
   <section id="videos">
@@ -157,38 +169,69 @@
     <div class="video-cards">
       <div class="card">
         <img src="thumbnail1.jpg" alt="Video 1">
-        <h3>Quick Kitchen Hack</h3>
-        <p>Save time with this effortless trick.</p>
+        <h3>N/A</h3>
+        <p>N/A</p>
       </div>
       <div class="card">
         <img src="thumbnail2.jpg" alt="Video 2">
-        <h3>Productivity Boost</h3>
-        <p>Get more done with less stress.</p>
+        <h3>N/A</h3>
+        <p>N/A</p>
       </div>
       <div class="card">
         <img src="thumbnail3.jpg" alt="Video 3">
-        <h3>Tech Shortcut</h3>
-        <p>Master your device in seconds.</p>
+        <h3>N/A</h3>
+        <p>N/A</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Want to collaborate or share feedback? Reach out via my socials or drop a message below:</p>
-    <form>
-      <label>Name:</label><br>
-      <input type="text" name="name" style="width:100%; padding:0.5rem;"><br><br>
-      <label>Email:</label><br>
-      <input type="email" name="email" style="width:100%; padding:0.5rem;"><br><br>
-      <label>Message:</label><br>
-      <textarea name="message" rows="5" style="width:100%; padding:0.5rem;"></textarea><br><br>
-      <button type="submit" style="padding:0.7rem 1.5rem; background:#17b978; color:white; border:none; border-radius:6px; cursor:pointer;">Send</button>
-    </form>
+  <section id="faq" class="faq">
+    <h2>FAQ</h2>
+    <button onclick="toggleAnswer('faq1')">How often do you post new tips?</button>
+    <div id="faq1" class="answer"><b>Answer:</b> I post new long  videos weekly 1 short every day, so there’s always something fresh to learn.</div>
+
+    <button onclick="toggleAnswer('faq2')">Can I suggest a topic?</button>
+    <div id="faq2" class="answer"><b>Answer:</b> Absolutely! Use the Links section to share your ideas.</div>
+
+    <button onclick="toggleAnswer('faq3')">Do you cover tech hacks?</button>
+    <div id="faq3" class="answer"><b>Answer:</b> Yes, I love sharing quick tech shortcuts to make devices easier to use.</div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <blockquote>
+      “Effortless Tips saved me hours in the kitchen. Simple and fun hacks!” — Sarah L.
+    </blockquote>
+    <blockquote>
+      “I boosted my productivity thanks to Nabil’s easy tricks. Highly recommend!” — James K.
+    </blockquote>
+    <blockquote>
+      “The tech shortcuts are a lifesaver. My phone feels brand new!” — Aisha M.
+    </blockquote>
+  </section>
+
+  <section id="links" class="links">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://youtube.com/@Effortless-Tips" target="_blank">YouTube Channel (@Effortless-Tips)</a></li>
+      <li><a href="https://helper101777.github.io/Nabil-Bleik/index.html#newsletter" target="_blank">My Books</a></li>
+
+    </ul>
   </section>
 
   <footer>
-    <p>© 2026 Effortless Tips | Subscribe for more hacks!</p>
+    <p>© 2026 Effortless Tips | Explore more hacks on YouTube!</p>
   </footer>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById(id);
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
