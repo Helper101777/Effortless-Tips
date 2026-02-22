@@ -8,26 +8,63 @@
     body {
       font-family: "Comic Sans MS", cursive, sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #a7ff83, #17b978);
-      color: #222;
+      background: #f5f5f5; /* light gray background */
+      color: #333;
     }
 
     header {
       text-align: center;
       padding: 2rem;
-      background: #17b978;
-      color: white;
+      background: #fff;
+      border-bottom: 2px solid #ccc;
       animation: fadeInDown 1.5s ease;
     }
 
     header h1 {
       font-size: 3rem;
       margin: 0;
+      color: #444;
     }
 
     header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
+      color: #666;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #eee;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #17b978;
+    }
+
+    .bio {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .bio h2 {
+      color: #17b978;
+      margin-bottom: 1rem;
     }
 
     .video-cards {
@@ -38,7 +75,7 @@
     }
 
     .card {
-      background: white;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       overflow: hidden;
@@ -65,13 +102,14 @@
     .card p {
       margin: 0 1rem 1rem;
       font-size: 1rem;
+      color: #555;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background: #17b978;
-      color: white;
+      background: #eee;
+      color: #333;
       animation: fadeInUp 1.5s ease;
     }
 
@@ -90,6 +128,12 @@
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .bio { margin: 1rem; padding: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -98,7 +142,18 @@
     <p>Smart hacks, zero effort ✨</p>
   </header>
 
-  <section class="video-cards">
+  <nav>
+    <a href="#videos">Videos</a>
+    <a href="#bio">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="bio" class="bio">
+    <h2>About Me</h2>
+    <p>Hi, I’m Nabil! I created Effortless Tips to share quick hacks that make life smoother, smarter, and more fun. Whether it’s productivity, lifestyle, or tech, my goal is to empower you with simple tricks that save time and energy.</p>
+  </section>
+
+  <section id="videos" class="video-cards">
     <div class="card">
       <img src="thumbnail1.jpg" alt="Video 1">
       <h3>Quick Kitchen Hack</h3>
@@ -116,8 +171,8 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Effortless Tips | Subscribe for more hacks!</p>
+  <footer id="contact">
+    <p>© 2026 Effortless Tips | Connect with me on YouTube & socials!</p>
   </footer>
 </body>
 </html>
